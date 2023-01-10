@@ -1,19 +1,17 @@
 import { registerApplication, start } from "single-spa";
 
-registerApplication({
-  name: "@single-spa/welcome",
-  app: () =>
-    System.import(
-      "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"
-    ),
-  activeWhen: ["/"],
-});
-
-// registerApplication({
+// registerApplication( config: {
 //   name: "@smtsinglespa/navbar",
-//   app: () => System.import("@smtsinglespa/navbar"),
+//   app: () =>
+//     System.import(moduleId: "@smtsinglespa/navbar"),
 //   activeWhen: ["/"]
 // });
+
+registerApplication({
+  name: "@smtnga-smt-nga-graph/graphviz",
+  app: () => System.import("@smtnga/smt-nga-graph"),
+  activeWhen: ["/"],
+});
 
 start({
   urlRerouteOnly: true,
