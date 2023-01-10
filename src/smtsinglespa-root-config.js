@@ -7,11 +7,18 @@ import { registerApplication, start } from "single-spa";
 //   activeWhen: ["/"]
 // });
 
-registerApplication({
-  name: "@smtnga-smt-nga-graph/graphviz",
-  app: () => System.import("@smtnga/smt-nga-graph"),
-  activeWhen: ["/"],
-});
+registerApplication(
+  {
+    name: "@smtsinglespa/graph",
+    app: () => System.import("@smtsinglespa/graph"),
+    activeWhen: ["/graph"],
+  },
+  {
+    name: "@smtsinglespa/navbar",
+    app: () => System.import("@singlespa/navbar"),
+    activeWhen: ["/nav"],
+  }
+);
 
 start({
   urlRerouteOnly: true,
