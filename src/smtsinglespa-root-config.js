@@ -7,18 +7,17 @@ import { registerApplication, start } from "single-spa";
 //   activeWhen: ["/"]
 // });
 
-registerApplication(
-  {
-    name: "@smtsinglespa/graph",
-    app: () => System.import("@smtsinglespa/graph"),
-    activeWhen: ["/graph"],
-  },
-  {
-    name: "@smtsinglespa/navbar",
-    app: () => System.import("@singlespa/navbar"),
-    activeWhen: ["/nav"],
-  }
-);
+registerApplication({
+  name: "@smtsinglespa/graph",
+  app: () => System.import("@smtsinglespa/graph"),
+  activeWhen: ["/graph"],
+});
+
+registerApplication({
+  name: "@smtsinglespa/navbar",
+  app: () => System.import("@smtsinglespa/navbar"),
+  activeWhen: ["/nav"],
+});
 
 start({
   urlRerouteOnly: true,
