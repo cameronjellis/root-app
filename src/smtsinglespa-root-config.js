@@ -8,15 +8,15 @@ import { registerApplication, start } from "single-spa";
 // });
 
 registerApplication({
-  name: "@smtsinglespa/graph",
-  app: () => System.import("@smtsinglespa/graph"),
-  activeWhen: ["/graph"],
+  name: "@smtsinglespa/navbar",
+  app: () => System.import("@smtsinglespa/navbar"),
+  activeWhen: ["/"],
 });
 
 registerApplication({
-  name: "@smtsinglespa/navbar",
-  app: () => System.import("@smtsinglespa/navbar"),
-  activeWhen: ["/nav"],
+  name: "@smtsinglespa/graph",
+  app: () => System.import("@smtsinglespa/graph"),
+  activeWhen: ["/graph"],
 });
 
 start({
